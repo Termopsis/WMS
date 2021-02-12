@@ -1,25 +1,16 @@
 package com.example.demo.entity.mq;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
 public class MQTask implements Runnable{
 
     private String type;
     private int value;
-
-    public String getType() {
-        return type;
-    }
-
-    public int getValue() {
-        return value;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setValue(int value) {
-        this.value = value;
-    }
 
     @Override
     public void run() {
@@ -32,7 +23,7 @@ public class MQTask implements Runnable{
             System.out.println("The task was interrupted");
         }
 
-        System.out.println("The task \""+type+"\" and value \""+value+"\"+ is done");
+        System.out.println("The task \""+type+"\" and value \""+value+"\" is done");
 
     }
 }

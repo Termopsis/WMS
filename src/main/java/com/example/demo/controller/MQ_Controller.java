@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/SomeEndPoint")
 public class MQ_Controller {
 
-    private MQTaskService mqTaskService = new MQTaskService();
+    private MQTaskService mqTaskService;
 
     public MQ_Controller(MQTaskService mqTaskService) {
         this.mqTaskService = mqTaskService;

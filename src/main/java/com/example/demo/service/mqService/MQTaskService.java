@@ -2,6 +2,7 @@ package com.example.demo.service.mqService;
 
 import com.example.demo.DemoApplication;
 import com.example.demo.entity.mq.MQTask;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -11,12 +12,11 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 
 @Service
+@NoArgsConstructor
 public class MQTaskService {
 
-    public MQTaskService() {
-    }
+    public void executeTask(MQTask mqTask){
 
-    public void executeTask(MQTask mqTask) {
         Map<String, ExecutorService> pool = DemoApplication.pool;
         ConcurrentMap<String, ConcurrentMap<Integer, CompletableFuture<Void>>> sessionTask = DemoApplication.sessionTask;
 
